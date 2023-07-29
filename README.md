@@ -1,1 +1,1 @@
-# Temperature-Convertor-Bharat-Intern-Tanushree-Mohanty     -PR
+# Temperature-Convertor-Bharat-Intern-Tanushree-Mohanty 
