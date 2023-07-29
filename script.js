@@ -1,7 +1,14 @@
+//Convertion-Function
 function convert() {
-  const fromValue = document.getElementById("fromValue").value;
+  const fromValue = parseFloat(document.getElementById("fromValue").value);
   const fromUnit = document.getElementById("fromUnit").value;
   const toUnit = document.getElementById("toUnit").value;
+
+  if (isNaN(fromValue)) {
+    // Check for Input-value -> null
+    document.getElementById("result").textContent = "Please enter a valid number";
+    return;
+  }
 
   if (fromUnit === toUnit) {
     document.getElementById("result").textContent = "Same units selected";
@@ -16,7 +23,7 @@ function convert() {
       result = (fromValue * 9 / 5) + 32;
       resultUnit = "°F";
     } else if (toUnit === "kelvin") {
-      result = parseFloat(fromValue) + 273.15;
+      result = fromValue + 273.15;
       resultUnit = "K";
     }
   } else if (fromUnit === "fahrenheit") {
@@ -29,7 +36,7 @@ function convert() {
     }
   } else if (fromUnit === "kelvin") {
     if (toUnit === "celsius") {
-      result = parseFloat(fromValue) - 273.15;
+      result = fromValue - 273.15;
       resultUnit = "°C";
     } else if (toUnit === "fahrenheit") {
       result = (fromValue - 273.15) * 9 / 5 + 32;
@@ -42,8 +49,8 @@ function convert() {
   }
 }
 
+// Function to reset input and result
 function reset() {
-  // Clear the input value and result
   document.getElementById("fromValue").value = "";
   document.getElementById("result").textContent = "";
 }
