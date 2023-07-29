@@ -16,7 +16,6 @@ body::before {
   background-position: center center;
 }
 
-
 .container {
   max-width: 100%;
   min-height: 100vh;
@@ -28,6 +27,20 @@ body::before {
   justify-content: center;
 }
 
+@keyframes neonEffect {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 36px;
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(210, 210, 210), 0 0 20px rgb(86, 190, 255), 0 0 30px rgba(255, 255, 255, 1);
+    font-size: 40px;
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 36px;
+  }
+}
 
 .heading {
   color: white;
@@ -36,7 +49,7 @@ body::before {
   font-size: 36px;
   font-weight: bold;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: neonEffect 3s linear infinite alternate;
 }
 
 @media (max-width: 767px) {
@@ -71,7 +84,8 @@ label {
   align-items: center;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5)
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.8);
 }
 
 .converter-box .row {
@@ -125,18 +139,53 @@ label {
   color: white;
 }
 
-.footer {
-  color: white;
+
+/*Footer-Styling*/
+footer {
+  color: whitesmoke;
+  text-align: center;
+  padding: .5em;
+  background-color: rgb(26, 26, 26);
+  width: 100%;
 }
 
-.footerlink {
+footer a {
   font-family: 'Poppins', sans-serif;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
 
-.footerlink:hover {
-  color: #fbff00;
+footer a:hover {
+  color: #7da8ff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-decoration: underline;
+}
+
+/* Responsive for Footer*/
+@media (max-width: 767px) {
+  .heading {
+    font-size: 32px;
+  }
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .heading {
+    font-size: 35px;
+  }
+  footer {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .heading {
+    font-size: 36px;
+  }
+  footer {
+    font-size: 18px;
+  }
 }

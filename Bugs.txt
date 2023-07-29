@@ -1,0 +1,35 @@
+// Bugs
+
+1-> B.D.T(Browser Developer Tool) 
+Warning-Error -> 
+(
+util.js:68 Uncaught TypeError: Cannot read properties of undefined (reading 'fn')
+at util.js:68:7
+at util.js:10:15
+at bootstrap.min.js:6:200
+at bootstrap.min.js:6:236
+)
+
+2-> Null value as input is making the function work...
+
+// Where and How it is fixed
+
+1 -> index.html 
+    -> line 50-53
+       -order-correction of the script tag
+
+2 -> Added a check{if} for null value in the input 
+
+----------------------------------------------------------------------------------------------------------------------
+//Added some style and functionality
+
+-Style
+1. Footer 
+2. convertion-box
+3. heading 
+4. linkedin-icon
+5. Browser_Tab-logo 
+
+-Functionality
+1. target the linkedin to a new tab 
+
